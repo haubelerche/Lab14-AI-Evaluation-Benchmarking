@@ -41,6 +41,11 @@ def chunk_document(text: str, doc_name: str, chunk_size: int, overlap: int) -> L
 
     for start in range(0, len(text), step):
         end = min(start + chunk_size, len(text))
+        if end < len(text):
+            # Avoid cutting in the middle of a word.
+            while end < len(text) and not text[end].isspace():
+                end += 1
+
         chunk_text = text[start:end].strip()
         if not chunk_text:
             continue
