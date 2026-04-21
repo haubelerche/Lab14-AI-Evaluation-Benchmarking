@@ -17,11 +17,14 @@ Tạo ra một **Golden Dataset** (Tập dữ liệu Vàng) gồm ít nhất 50 
 4. **Kiểm thử script:** Chạy thử `python data/synthetic_gen.py` xem file xuất ra có chuẩn định dạng cấu trúc JSONL không.
 
 ## ✅ Tiêu chí hoàn thành (Checklist)
-- [ ] Chạy lệnh `python data/synthetic_gen.py` không bị lỗi.
-- [ ] Hàm sinh ra thành công file `data/golden_set.jsonl`.
-- [ ] File `golden_set.jsonl` có đủ ít nhất **50 dòng** (test cases).
-- [ ] Mỗi JSON lines có đủ các key: `question`, `expected_answer`, `context`, `expected_ids` (hoặc cấu trúc tương đương).
-- [ ] Có ít nhất 5 câu hỏi mang tính chất "Red Teaming" (lừa/đánh đố).
+- [x] Chạy lệnh `python data/synthetic_gen.py` không bị lỗi.
+- [x] Hàm sinh ra thành công file `data/golden_set.jsonl`.
+- [x] File `golden_set.jsonl` có đủ ít nhất **50 dòng** (test cases).
+- [x] Mỗi JSON lines có đủ các key: `question`, `expected_answer`, `context`, `expected_ids` (hoặc cấu trúc tương đương).
+- [x] Có ít nhất 5 câu hỏi mang tính chất "Red Teaming" (lừa/đánh đố).
+
+### Ghi nhận kiểm thử nhanh
+- Kết quả xác minh tự động sau khi chạy script: `rows=50 valid=True red=7`.
 
 ## 💡 Nơi nhận kết quả
 Sau khi xong, các bạn ở nhóm khác (đặc biệt Thành viên 4 và 5) sẽ dùng trực tiếp file `data/golden_set.jsonl` mà bạn tạo ra để chạy Test Benchmark.
